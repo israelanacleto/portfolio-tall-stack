@@ -1,0 +1,2 @@
+-- Create additional databases if needed
+-- CREATE DATABASE tall_stack_testing;

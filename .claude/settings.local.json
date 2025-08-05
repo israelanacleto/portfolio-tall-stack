@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(composer create-project:*)",
+      "Bash(mv:*)",
+      "Bash(rmdir:*)"
+    ],
+    "deny": []
+  }
+}

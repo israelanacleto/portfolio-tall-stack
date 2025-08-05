@@ -1,0 +1,135 @@
+# ================================
+# TALL Stack Portfolio - GitIgnore
+# ================================
+
+# === IDE and Editor Files ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# === OS Generated Files ===
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# === Docker ===
+.docker/
+*.log
+
+# === Environment Variables ===
+.env
+.env.local
+.env.production
+.env.backup
+.env.testing
+
+# === Laravel (src/) ===
+src/vendor/
+src/node_modules/
+src/public/hot
+src/public/storage
+src/storage/app/*
+!src/storage/app/.gitignore
+!src/storage/app/public/
+src/storage/framework/cache/data/*
+!src/storage/framework/cache/data/.gitignore
+src/storage/framework/sessions/*
+!src/storage/framework/sessions/.gitignore
+src/storage/framework/testing/*
+!src/storage/framework/testing/.gitignore
+src/storage/framework/views/*
+!src/storage/framework/views/.gitignore
+src/storage/logs/*
+!src/storage/logs/.gitignore
+src/storage/*.key
+src/.env
+src/.env.backup
+src/.env.production
+src/.phpunit.result.cache
+src/Homestead.json
+src/Homestead.yaml
+src/auth.json
+src/npm-debug.log
+src/yarn-error.log
+src/.phpunit.cache/
+
+# === Node.js ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+.pnp
+.pnp.js
+
+# === Build Output ===
+/dist/
+/build/
+src/public/build/
+src/public/css/
+src/public/js/
+src/public/mix-manifest.json
+
+# === Testing ===
+/coverage/
+.nyc_output/
+src/tests/_reports/
+.phpunit.cache/
+
+# === Logs ===
+*.log
+logs/
+src/storage/logs/
+docker/logs/
+
+# === Cache ===
+.cache/
+src/bootstrap/cache/*
+!src/bootstrap/cache/.gitignore
+src/.phpunit.cache/
+
+# === Temporary Files ===
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# === Database ===
+*.sqlite
+*.sqlite3
+database.sqlite
+
+# === Composer ===
+src/vendor/
+composer.phar
+
+# === Assets ===
+src/public/storage
+src/storage/app/public/*
+
+# === IDE Specific ===
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+
+# === Backup Files ===
+*.bak
+*.backup
+*~
+
+# === Documentation Build ===
+docs/_build/
+site/
+
+# === Keep Important Files ===
+!.gitkeep
+!.htaccess
