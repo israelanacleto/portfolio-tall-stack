@@ -11,6 +11,8 @@ services:
       - "8000:80"
     volumes:
       - ./src:/var/www/html
+      - app_storage:/var/www/html/storage
+      - app_bootstrap_cache:/var/www/html/bootstrap/cache
       - ./docker/php/php.ini:/usr/local/etc/php/conf.d/99-app.ini
       - ./docker/php/opcache.ini:/usr/local/etc/php/conf.d/opcache.ini
     environment:
@@ -95,6 +97,10 @@ volumes:
   postgres_data:
     driver: local
   redis_data:
+    driver: local
+  app_storage:
+    driver: local
+  app_bootstrap_cache:
     driver: local
 
 networks:

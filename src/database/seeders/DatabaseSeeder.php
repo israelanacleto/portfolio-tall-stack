@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Administrador',
             'email' => 'admin@portfolio.local',
+            'password' => bcrypt('password123'),
         ]);
 
         // Executar seeders de dados do portfolio
