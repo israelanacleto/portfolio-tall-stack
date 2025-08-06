@@ -14,6 +14,84 @@ Todas as mudanças significativas do projeto serão documentadas neste arquivo.
 
 ---
 
+## [Não Versionado] - 2025-08-06
+
+### FEAT - Seeders com Dados Iniciais
+**Descrição**: Criação de seeders completos para popular o banco com dados de desenvolvimento
+
+**Implementado**:
+- TechnologySeeder com 13 tecnologias organizadas por categorias
+- ProjectSeeder com 5 projetos de exemplo representativos
+- DatabaseSeeder configurado para criar usuário admin
+- Dados realistas baseados no perfil de desenvolvedor .NET/Angular migrando para TALL Stack
+
+**Categorias de Tecnologias**:
+- **Backend**: PHP, Laravel, C#
+- **Frontend**: Livewire, Tailwind CSS, Alpine.js, JavaScript, Angular, Vite
+- **Database**: PostgreSQL, Redis
+- **DevOps**: Docker, Git
+
+**Projetos de Exemplo**:
+- Portfolio TALL Stack (projeto atual com metadados)
+- Sistema E-commerce .NET (experiência anterior)
+- Dashboard Angular Analytics (competência em frontend)
+- API REST Laravel JWT (conhecimento de APIs)
+- Sistema Gestão Escolar (projeto complexo)
+
+**Para executar**:
+```bash
+docker compose exec app php artisan migrate:fresh --seed
+```
+
+**Resultado**: 13 tecnologias + 5 projetos + 1 admin user inseridos com sucesso
+
+---
+
+## [Não Versionado] - 2025-08-06
+
+### FEAT - Jetstream com Livewire e Schema PostgreSQL Completo
+**Descrição**: Instalação completa do Laravel Jetstream com Livewire e criação de schema otimizado para PostgreSQL
+
+**Implementado**:
+- Laravel Jetstream 5.5 com Livewire 3 para autenticação
+- Dark mode configurado no Tailwind CSS (`darkMode: 'class'`)
+- 4 migrations otimizadas para PostgreSQL com UUIDs:
+  * **projects** - JSONB tech_stack, full-text search, índices GIN
+  * **technologies** - categorias, cores, ícones organizados
+  * **contacts** - sistema de status e metadata JSONB
+  * **project_images** - relacionamento com projetos, tipos de imagem
+- Models configurados com HasUuids trait e relacionamentos
+- Assets compilados com Vite (CSS + JS)
+
+**Features Funcionais**:
+- ✅ Sistema de registro/login funcionando
+- ✅ Dashboard após autenticação
+- ✅ Dark mode toggle disponível
+- ✅ Conexão PostgreSQL 15.13 estabelecida
+- ✅ Full-text search configurado nos projetos
+- ✅ Relacionamentos entre Project ↔ ProjectImage
+- ✅ Scopes úteis (active, featured, search)
+
+**Configuração Técnica**:
+- UUIDs como chaves primárias em todas as tabelas
+- Índices otimizados para performance no PostgreSQL
+- JSONB para metadados flexíveis
+- Casts apropriados para arrays e objetos
+- Accessors para URLs de imagens
+
+**Aplicação Disponível**:
+- 🌐 **http://localhost:8000** - Aplicação principal
+- 📧 **http://localhost:8025** - Mailhog para testes de email
+
+**Para aplicar**:
+```bash
+docker compose up -d
+docker compose exec app php artisan migrate
+docker compose exec app npm run build
+```
+
+---
+
 ## [Não Versionado] - 2025-01-05
 
 ### FEAT - Laravel Instalado e Configurado
@@ -91,22 +169,31 @@ make install
 
 ## 🚀 Próximas Etapas Planejadas
 
-### Fase 1: Estrutura Laravel + Jetstream ⏳
-- [ ] Instalação Laravel com Jetstream + Livewire
-- [ ] Configuração PostgreSQL
-- [ ] Primeiro deploy do ambiente
+### Fase 1: Estrutura Laravel + Jetstream ✅ 
+- [x] Instalação Laravel com Jetstream + Livewire
+- [x] Configuração PostgreSQL
+- [x] Primeiro deploy do ambiente
 
-### Fase 2: Models e Migrations 📋
-- [ ] Migration projects com JSONB
-- [ ] Model Project com relationships
-- [ ] Full-text search setup
+### Fase 2: Models e Migrations ✅
+- [x] Migration projects com JSONB
+- [x] Model Project com relationships
+- [x] Full-text search setup
 - [ ] Seeds iniciais
 
 ### Fase 3: Frontend Base 🎨
-- [ ] Layout principal
-- [ ] Navigation component
-- [ ] Theme switcher (Dark/Light)
-- [ ] Hero section
+- [x] Layout principal (Jetstream)
+- [x] Navigation component (Jetstream)
+- [x] Theme switcher (Dark/Light)
+- [ ] Hero section personalizada
+- [ ] Portfolio components
+- [ ] Project showcase layout
+
+### Fase 4: CMS Admin 📋 (Próximo)
+- [ ] Admin dashboard para projetos
+- [ ] CRUD de projetos com Livewire
+- [ ] Upload de imagens
+- [ ] Gerenciamento de tecnologias
+- [ ] Sistema de contato funcionando
 
 ---
 

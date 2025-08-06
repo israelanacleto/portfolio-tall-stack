@@ -13,11 +13,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
+        // Criar usuário admin para gerenciar o portfolio
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Administrador',
+            'email' => 'admin@portfolio.local',
+        ]);
+
+        // Executar seeders de dados do portfolio
+        $this->call([
+            TechnologySeeder::class,
+            ProjectSeeder::class,
         ]);
     }
 }
