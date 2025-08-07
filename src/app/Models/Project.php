@@ -12,6 +12,9 @@ class Project extends Model
 {
     use HasFactory, HasUuids;
 
+    public $incrementing = false;
+    protected $keyType = 'string';
+
     protected $fillable = [
         'title',
         'slug',
@@ -56,6 +59,11 @@ class Project extends Model
     public function scopeFeatured($query)
     {
         return $query->where('featured', true);
+    }
+
+    public function scopeOrdered($query)
+    {
+        return $query->orderBy('sort_order')->orderBy('created_at', 'desc');
     }
 
     public function scopeByTechnology($query, $technology)

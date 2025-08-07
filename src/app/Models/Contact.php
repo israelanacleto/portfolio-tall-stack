@@ -10,6 +10,9 @@ class Contact extends Model
 {
     use HasFactory, HasUuids;
 
+    public $incrementing = false;
+    protected $keyType = 'string';
+
     protected $fillable = [
         'name',
         'email',
@@ -37,6 +40,16 @@ class Contact extends Model
     public function scopeRead($query)
     {
         return $query->where('status', 'read');
+    }
+
+    public function scopeByStatus($query, $status)
+    {
+        return $query->where('status', $status);
+    }
+
+    public function scopeRecent($query)
+    {
+        return $query->orderBy('created_at', 'desc');
     }
 
     public function markAsRead()
